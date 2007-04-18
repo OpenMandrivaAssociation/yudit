@@ -48,15 +48,6 @@ convert gnome-%{name}.png -geometry 48x48 %{buildroot}%{_liconsdir}/%{name}.png
 convert gnome-%{name}.png -geometry 32x32 %{buildroot}%{_iconsdir}/%{name}.png
 convert gnome-%{name}.png -geometry 16x16 %{buildroot}%{_miconsdir}/%{name}.png
 
-cat <<EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): needs="X11" \
-    section="Applications/Editors" \
-    title="Yudit" \
-    longtitle="Unicode i18n Editor" \
-    command="%{name}" \
-    icon="%{name}.png" \
-        xdg="true"
-EOF
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -102,7 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/yudit/doc/*
 %{_datadir}/yudit/config/*
 %{_datadir}/yudit/fonts/*
-%{_menudir}/%{name}
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
