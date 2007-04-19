@@ -20,6 +20,8 @@ URL:        http://www.yudit.org/
 Summary:    Unicode Text Editor
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
+BuildRequires:  ImageMagick
+
 %description
 Yudit is a unicode text editor for the X Window System.
 It does not need localized environment or unicode fonts.
