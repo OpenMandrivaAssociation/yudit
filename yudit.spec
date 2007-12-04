@@ -6,7 +6,7 @@ Name:       %{name}
 Version:    %{version}
 Release:    %{release}
 Group:      Editors
-BuildRequires:  XFree86-devel freetype-devel gettext
+BuildRequires:  X11-devel freetype-devel gettext
 License:    GPL
 Conflicts:  netatalk < 2.0.3-3mdk
 Source0:    http://www.yudit.org/download/yudit-%{version}.tar.bz2 
@@ -58,7 +58,7 @@ Name=Yudit
 Type=Application
 Description=Unicode Text Editor
 Exec=yudit
-Icon=yudit.png
+Icon=yudit
 Terminal=false
 Categories=TextEditor;Utility;X-MandrivaLinux-MoreApplications-Editors;
 EOF
