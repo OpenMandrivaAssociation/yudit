@@ -18,6 +18,7 @@ Source0:    http://www.yudit.org/download/yudit-%{version}.tar.bz2
 Patch0: yudit-2.7.6-properties.patch.bz2
 URL:        http://www.yudit.org/
 Summary:    Unicode Text Editor
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:  ImageMagick
 
