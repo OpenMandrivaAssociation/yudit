@@ -1,5 +1,5 @@
 %define name    yudit
-%define version 2.8.1
+%define version 2.9.0
 %define release %mkrel 1
 
 Name:       %{name}
@@ -19,8 +19,7 @@ Patch0: yudit-2.7.6-properties.patch.bz2
 URL:        http://www.yudit.org/
 Summary:    Unicode Text Editor
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-
-BuildRequires:  ImageMagick
+BuildRequires:  ImageMagick libx11-devel
 
 %description
 Yudit is a unicode text editor for the X Window System.
@@ -95,10 +94,12 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/yudit/doc
 %dir %{_datadir}/yudit/config
 %dir %{_datadir}/yudit/fonts
+%dir %{_datadir}/yudit/syntax
 %{_datadir}/yudit/data/*
 %{_datadir}/yudit/doc/*
 %{_datadir}/yudit/config/*
 %{_datadir}/yudit/fonts/*
+%{_datadir}/yudit/syntax/*
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
