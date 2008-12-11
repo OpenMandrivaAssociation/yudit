@@ -19,7 +19,7 @@ Patch0: yudit-2.7.6-properties.patch.bz2
 URL:        http://www.yudit.org/
 Summary:    Unicode Text Editor
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:  ImageMagick libx11-devel
+BuildRequires:  imagemagick libx11-devel
 
 %description
 Yudit is a unicode text editor for the X Window System.
