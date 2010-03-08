@@ -1,13 +1,13 @@
 %define name    yudit
-%define version 2.9.0
-%define release %mkrel 2
+%define version 2.9.2
+%define release %mkrel 1
 
 Name:       %{name}
 Version:    %{version}
 Release:    %{release}
 Group:      Editors
 BuildRequires:  X11-devel freetype-devel gettext
-License:    GPL
+License:    GPLv2
 Conflicts:  netatalk < 2.0.3-3mdk
 Source0:    http://www.yudit.org/download/yudit-%{version}.tar.bz2 
 # Here I define the directories with ttf files; and several ttf fonts
@@ -34,9 +34,7 @@ GNU (C) Gaspar Sinai <gsinai@iname.com>
 %setup -q 
 
 %build
-
 %configure2_5x
- 
 make
 
 %install
