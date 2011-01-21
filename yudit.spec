@@ -1,12 +1,11 @@
 %define name    yudit
 %define version 2.9.2
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name:       %{name}
 Version:    %{version}
 Release:    %{release}
 Group:      Editors
-BuildRequires:  X11-devel freetype-devel gettext
 License:    GPLv2
 Conflicts:  netatalk < 2.0.3-3mdk
 Source0:    http://www.yudit.org/download/yudit-%{version}.tar.bz2 
@@ -28,7 +27,6 @@ It supports simultanious processing of many languages,
 input methods, conversions for local character standards.
 This package includes X11 editor interface, shell conversion
 utilities and it also has support for postscript printing.
-GNU (C) Gaspar Sinai <gsinai@iname.com> 
 
 %prep
 %setup -q 
@@ -42,7 +40,7 @@ rm -rf $RPM_BUILD_ROOT
  
 %makeinstall_std
 
-mkdir -p %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir},%{_menudir}}
+mkdir -p %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir}}
 convert gnome-%{name}.png -geometry 48x48 %{buildroot}%{_liconsdir}/%{name}.png
 convert gnome-%{name}.png -geometry 32x32 %{buildroot}%{_iconsdir}/%{name}.png
 convert gnome-%{name}.png -geometry 16x16 %{buildroot}%{_miconsdir}/%{name}.png
@@ -57,7 +55,7 @@ Description=Unicode Text Editor
 Exec=yudit
 Icon=yudit
 Terminal=false
-Categories=TextEditor;Utility;X-MandrivaLinux-MoreApplications-Editors;
+Categories=TextEditor;Utility;
 EOF
  
 %find_lang %{name}
@@ -87,20 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/*
 %{_mandir}/man?/*
 %{_datadir}/applications/*.desktop
-%dir %{_datadir}/yudit
-%dir %{_datadir}/yudit/data
-%dir %{_datadir}/yudit/doc
-%dir %{_datadir}/yudit/config
-%dir %{_datadir}/yudit/fonts
-%dir %{_datadir}/yudit/syntax
-%{_datadir}/yudit/data/*
-%{_datadir}/yudit/doc/*
-%{_datadir}/yudit/config/*
-%{_datadir}/yudit/fonts/*
-%{_datadir}/yudit/syntax/*
+%{_datadir}/yudit
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
-# non standard translation directory
-%dir %{_datadir}/yudit/locale
-%lang(all) %{_datadir}/yudit/locale/*
