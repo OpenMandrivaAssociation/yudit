@@ -1,0 +1,102 @@
+--- yudit-2.9.2/yudit.properties.in.0000~	2010-01-31 04:23:28.000000000 +0100
++++ yudit-2.9.2/yudit.properties.in	2012-12-04 23:49:06.191630586 +0100
+@@ -36,7 +36,38 @@ yudit.datapath=@YUDIT_DATA@/data
+ #
+ # This is where the .ttf (True Type font) files are
+ #
+-yudit.fontpath=@YUDIT_DATA@/fonts,/usr/share/yudit/data
++yudit.fontpath=@YUDIT_DATA@/fonts,/usr/share/yudit/data,\
++/usr/X11R6/lib/X11/fonts/drakfont,\
++/usr/X11R6/lib/X11/fonts/drakfont/ttf,\
++/usr/share/fonts/ttf/arabic,\
++/usr/share/fonts/ttf/armenian,\
++/usr/share/fonts/ttf/bengali,\
++/usr/share/fonts/ttf/big5,\
++/usr/share/fonts/ttf/cyrillic,\
++/usr/share/fonts/ttf/decoratives,\
++/usr/share/fonts/ttf/ethiopic,\
++/usr/share/fonts/ttf/gb2312,\
++/usr/share/fonts/ttf/georgian,\
++/usr/share/fonts/ttf/hebrew,\
++/usr/share/fonts/ttf/japanese,\
++/usr/share/fonts/ttf/kannada,\
++/usr/share/fonts/ttf/korean,\
++/usr/share/fonts/ttf/tamil,\
++/usr/share/fonts/ttf/thai,\
++/usr/share/fonts/ttf/tscii,\
++/usr/share/fonts/ttf/vera,\
++/usr/share/fonts/ttf/viet,\
++/usr/share/fonts/ttf/western,\
++/usr/share/fonts/otf/mdk,\
++/opt/ttfonts,\
++/opt/ttfonts/arabic,\
++/opt/ttfonts/chinese,\
++/opt/ttfonts/ethiopic,\
++/opt/ttfonts/georgian,\
++/opt/ttfonts/japanese,\
++/opt/ttfonts/msfonts,\
++/usr/X11R6/lib/X11/fonts/TTF
++
+ 
+ #
+ # This is where the .syn (Syntax Highlighting) files are
+@@ -107,7 +138,7 @@ yudit.freehand.converter=kanji
+ # If you specify yudit.default.language=default, then LANG environment 
+ #    variable is used. Be careful - you may not have the font!
+ #
+-yudit.default.language=
++yudit.default.language=default
+ 
+ #
+ # Things will be put on X11 clipboard with this encoding.
+@@ -227,8 +258,8 @@ yudit.editor.fonts=default,TrueType,Misc
+ # For other compose rules, please specify the ones you need:
+ # like hu_HU. Please note that only x-utf-8 can have many
+ # different locales.
+-yudit.editor.inputs=straight,unicode,kinput2,Hungarian,freehand,Hangul,\
+-Kana,Mnemonic,Esperanto,x-ibus:en_US.utf8,x-utf-8:hu_HU,HungarianRunes
++yudit.editor.inputs=x-utf-8:en_US.UTF-8,straight,unicode,uim-anthy,Hungarian,\
++freehand,Hangul,Kana,Mnemonic,Esperanto,x-utf-8:en_GB,x-utf-8:hu_HU,HungarianRunes
+ 
+ #
+ # kinput2:ja_JP, for instance will appear as x-kinput2 to save room
+@@ -238,7 +269,7 @@ Kana,Mnemonic,Esperanto,x-ibus:en_US.utf
+ # SCIM: http://www.scim-im.org/
+ # interxim: http://www.oksid.ch/interxim/index.html
+ #
+-yudit.editor.xinputs=ibus:en_US.utf8,SCIM:en_US.utf-8,interxim,utf-8:en_GB,utf-8:hu_HU,kinput2:ja_JP.eucJP,xcin:zh_TW.big5,Ami:ko_KR,xcin-zh_CN.GB2312:zh_CN.GB2312
++yudit.editor.xinputs=ibus:en_US.utf8,SCIM:en_US.utf-8,interxim,utf-8:en_US.UTF-8,utf-8:en_GB,utf-8:hu_HU,uim-anthy:ja_JP,xcin:zh_TW.Big5,Ami:ko_KR,xcin-zh_CN.GB2312:zh_CN.GB2312
+ 
+ #
+ # The x input style for the editor window.
+@@ -250,9 +281,9 @@ yudit.editor.xinputs=ibus:en_US.utf8,SCI
+ #
+ yudit.editor.xinputs.style=preedit-over-status-under
+ 
+-yudit.editor.fontsize=18
+-yudit.editor.font=default
+-yudit.editor.input=straight
++yudit.editor.fontsize=16
++yudit.editor.font=TrueType
++yudit.editor.input=x-utf-8:en_US.UTF-8
+ 
+ yudit.fonts=default,TrueType,Bitmap,Japanese,Courier,Times,Helvetica,Lucida,Misc
+ 
+@@ -290,7 +321,16 @@ yudit.fonts=default,TrueType,Bitmap,Japa
+ #    If not specified it is used as LR or RL and for RL mirrored glyphs 
+ #    it will get mirrored by software.
+ #
+-yudit.font.TrueType=arial.ttf,gulim.ttf,ogulim.ttf:mslvt,raghu.ttf,tsckanna.ttf:tscii,dc-font.ttf:mlym,MalOtf.ttf:mlym,code2000.ttf,code2001.ttf:unicode:RL,cyberbit.ttf,yudit.ttf
++yudit.font.TrueType=arial.ttf,msgothic.ttf,kochi-gothic.ttf,gulim.ttf,\
++caslr.ttf,fogcaslr.ttf,l_10646.ttf,tahoma.ttf,\
++bpgutf8m.ttf,gfzemenu.ttf,artsnk_b.ttf,bsmi00lp.ttf,gbsn00lp.ttf,\
++msmincho.ttf,norasi_n.ttf,Pigiarniq_Regular.ttf,urdunast.ttf,ballrn__.ttf,\
++mssong.ttf,\
++Sampige.ttf:knda,MuktiRegular.ttf:beng,\
++ogulim.ttf:mslvt,raghu.ttf,tsckanna.ttf:tscii,dc-font.ttf:mlym,MalOtf.ttf:mlym,\
++code2000.ttf,code2001.ttf:unicode:RL,\
++cyberbit.ttf,rovstd.ttf:rovas:LR,yudit.ttf,\
++Kacst-Qr.ttf
+ 
+ #
+ # For convention always have one yudit.font.Bitmap
