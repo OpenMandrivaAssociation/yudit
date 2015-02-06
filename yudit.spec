@@ -2,7 +2,7 @@
 
 Name:       yudit
 Version:    2.9.2
-Release:    4
+Release:    5
 Group:      Editors
 License:    GPLv2
 Conflicts:  netatalk < 2.0.3-3mdk
