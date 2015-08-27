@@ -1,3 +1,5 @@
+removed_sources:
+  yudit-2.9.2.tar.bz2: 9e38264c3a4faef8d23583aa24c4cf2ff5527eaf
 sources:
-  "yudit-2.7.6-properties.patch.bz2": d4f59d79f44105f3ed1612e81c0d433f90b4adfe
-  "yudit-2.9.2.tar.bz2": 9e38264c3a4faef8d23583aa24c4cf2ff5527eaf
+  yudit-2.7.6-properties.patch.bz2: d4f59d79f44105f3ed1612e81c0d433f90b4adfe
+  yudit-2.9.6.tar.bz2: 12a368c08c37c25dc8c73eea6b2912ce47268e54
