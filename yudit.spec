@@ -1,7 +1,7 @@
 %define debug_package %nil
 
 Name:       yudit
-Version:    2.9.6
+Version:    3.0.9
 Release:    1
 Group:      Editors
 License:    GPLv2
@@ -25,15 +25,14 @@ This package includes X11 editor interface, shell conversion
 utilities and it also has support for postscript printing.
 
 %prep
-%setup -q 
+%autosetup -p1
+%configure2_5x
 
 %build
-%configure2_5x
-make
+%make_build
 
 %install
- 
-%makeinstall_std
+%make_install
 
 mkdir -p %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir}}
 convert gnome-%{name}.png -geometry 48x48 %{buildroot}%{_liconsdir}/%{name}.png
@@ -55,16 +54,13 @@ Terminal=false
 Categories=TextEditor;Utility;
 EOF
  
-%find_lang %{name} || touch %{name}.lang
-
 # rpm complains and fails when there are installed but unpackaged files
 # as we don't include those in the package, we delete them from the
 # build tree -- pablo
 rm -rf %{buildroot}%{_datadir}/yudit/src
 
 
-
-%files -f %{name}.lang
+%files
 %defattr (-, root, root, 755)
 %doc *.TXT
 %{_bindir}/*
