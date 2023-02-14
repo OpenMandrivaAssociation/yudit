@@ -1,6 +1,6 @@
-diff -up yudit-3.0.9/yudit.properties.in.1~ yudit-3.0.9/yudit.properties.in
---- yudit-3.0.9/yudit.properties.in.1~	2023-01-27 05:56:34.000000000 +0100
-+++ yudit-3.0.9/yudit.properties.in	2023-01-31 20:09:46.248591370 +0100
+diff -up yudit-3.1.0/yudit.properties.in.1~ yudit-3.1.0/yudit.properties.in
+--- yudit-3.1.0/yudit.properties.in.1~	2023-02-09 05:32:11.000000000 +0100
++++ yudit-3.1.0/yudit.properties.in	2023-02-14 21:07:33.674329408 +0100
 @@ -43,7 +43,37 @@ yudit.datapath=
  # 2. this comma,separated,path, like /my/dir1,/my/dir2
  # 3. @YUDIT_DATA@/fonts
@@ -40,7 +40,7 @@ diff -up yudit-3.0.9/yudit.properties.in.1~ yudit-3.0.9/yudit.properties.in
  
  #
  # This is where the .syn (Syntax Highlighting) files are
-@@ -120,7 +150,7 @@ yudit.freehand.converter=kanji
+@@ -118,7 +148,7 @@ yudit.freehand.converter=kanji
  # If you specify yudit.default.language=default, then LANG environment 
  #    variable is used. Be careful - you may not have the font!
  #
@@ -49,18 +49,18 @@ diff -up yudit-3.0.9/yudit.properties.in.1~ yudit-3.0.9/yudit.properties.in
  
  #
  # Things will be put on X11 clipboard with this encoding.
-@@ -257,8 +287,8 @@ yudit.editor.fonts=default,TrueType,Seri
+@@ -243,8 +273,8 @@ yudit.editor.fonts=default,TrueType,Seri
+ # fcitx only supports preedit-under-status-under input style
  #
- # On Mac F11 is conveniently blocked, so we cant select this 
- # fcitx X11 input method.
--yudit.editor.inputs=straight,unicode,kinput2,Hungarian,freehand,Hangul,\
--Emoji,Mnemonic,Esperanto,OldHungarian,x-ibus:en_US.utf-8,HungarianRunes
-+yudit.editor.inputs=x-utf-8:en_US.UTF-8,straight,uim-anthy,unicode,Kana,kinput2,Hungarian,freehand,Hangul,\
-+Emoji,Mnemonic,Esperanto,x-utf-8:en_GB,OldHungarian,x-ibus:en_US.utf-8,HungarianRunes
+ # On Mac F11 is blocked
+-yudit.editor.inputs=straight,unicode,@YUDIT_F3@,Hungarian,freehand,Hangul,\
+-Emoji,Mnemonic,Esperanto,OldHungarian,Kana,HungarianRunes
++yudit.editor.inputs=x-utf-8:en_US.UTF-8,straight,uim-anthy,unicode,kinput2,@YUDIT_F3@,Hungarian,freehand,Hangul,\
++Emoji,Mnemonic,Esperanto,x-utf-8:en_GB,OldHungarian,x-ibus:en_US.utf-8,Kana,HungarianRunes
  
  #
  # kinput2:ja_JP, for instance will appear as x-kinput2 to save room
-@@ -273,7 +303,7 @@ Emoji,Mnemonic,Esperanto,OldHungarian,x-
+@@ -259,7 +289,7 @@ Emoji,Mnemonic,Esperanto,OldHungarian,Ka
  #
  # On Ubuntu fcitx only supports preedit-under-status-under input style.
  #
@@ -69,7 +69,7 @@ diff -up yudit-3.0.9/yudit.properties.in.1~ yudit-3.0.9/yudit.properties.in
  
  #
  # The x input style for the editor window.
-@@ -286,9 +316,9 @@ yudit.editor.xinputs=fcitx:en_US.utf-8,i
+@@ -272,9 +302,9 @@ yudit.editor.xinputs=fcitx:en_US.utf-8,i
  # On Ubuntu fcitx only supports preedit-under-status-under input style.
  yudit.editor.xinputs.style=preedit-under-status-under
  
@@ -82,7 +82,7 @@ diff -up yudit-3.0.9/yudit.properties.in.1~ yudit-3.0.9/yudit.properties.in
  
  yudit.fonts=default,TrueType,Bitmap,Japanese,Courier,Times,Helvetica,Lucida,Misc
  
-@@ -326,7 +356,16 @@ yudit.fonts=default,TrueType,Bitmap,Japa
+@@ -312,7 +342,16 @@ yudit.fonts=default,TrueType,Bitmap,Japa
  #    If not specified it is used as LR or RL and for RL mirrored glyphs 
  #    it will get mirrored by software.
  #

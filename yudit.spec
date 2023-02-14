@@ -1,7 +1,7 @@
 %define debug_package %nil
 
 Name:       yudit
-Version:    3.0.9
+Version:    3.1.0
 Release:    1
 Group:      Editors
 License:    GPLv2
@@ -35,9 +35,9 @@ utilities and it also has support for postscript printing.
 %make_install
 
 mkdir -p %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir}}
-convert gnome-%{name}.png -geometry 48x48 %{buildroot}%{_liconsdir}/%{name}.png
-convert gnome-%{name}.png -geometry 32x32 %{buildroot}%{_iconsdir}/%{name}.png
-convert gnome-%{name}.png -geometry 16x16 %{buildroot}%{_miconsdir}/%{name}.png
+cp yudit64x64.png %{buildroot}%{_liconsdir}/%{name}.png
+convert yudit64x64.png -geometry 32x32 %{buildroot}%{_iconsdir}/%{name}.png
+convert yudit64x64.png -geometry 16x16 %{buildroot}%{_miconsdir}/%{name}.png
 
 
 mkdir -p %{buildroot}%{_datadir}/applications
@@ -59,8 +59,9 @@ EOF
 # build tree -- pablo
 rm -rf %{buildroot}%{_datadir}/yudit/src
 
+%find_lang %{name}
 
-%files
+%files -f %{name}.lang
 %defattr (-, root, root, 755)
 %doc *.TXT
 %{_bindir}/*
@@ -70,4 +71,3 @@ rm -rf %{buildroot}%{_datadir}/yudit/src
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
-
