@@ -12,7 +12,7 @@ Source0:    http://www.yudit.org/download/yudit-%{version}.tar.bz2
 # a very simple three-lines one) rather than discarding, as discarding it
 # means we lose out-of-the box support for various languages -- pablo
 Patch0: yudit-2.9.2-properties.patch
-URL:        http://www.yudit.org/
+URL:        https://www.yudit.org/
 Summary:    Unicode Text Editor
 BuildRequires:  imagemagick pkgconfig(x11)
 
